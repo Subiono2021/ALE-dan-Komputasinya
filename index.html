@@ -373,9 +373,70 @@
         font-size: 1.1em;
     }
 }
+</style>
 
 
-    </style>
+<style>
+details.custom-details {
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f9fbff;
+    transition: all 0.3s ease;
+}
+
+details.custom-details[open] {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+summary.custom-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 16px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #e3f2fd, #bbdefb);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s ease;
+}
+
+summary.custom-summary:hover {
+    background: linear-gradient(90deg, #bbdefb, #90caf9);
+}
+
+summary.custom-summary::-webkit-details-marker {
+    display: none;
+}
+
+.summary-title {
+    font-size: 16px;
+}
+
+.summary-icon {
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+details[open] .summary-icon {
+    transform: rotate(90deg);
+}
+
+.details-content {
+    padding: 15px;
+    background: #ffffff;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+
+
 </head>
 
 <body>
@@ -746,8 +807,15 @@ Matematika, Aplikasi dan Komputasi</em>. <a href="https://sites.google.com/view/
  <p>Ruang vektor <b>Euklidean</b> adalah contoh khusus dari ruang vektor yang elemen-elemennya berupa vektor dalam ruang berdimensi hingga dengan operasi yang sesuai konsep geometri Euklidean. Biasanya, ruang ini dilambangkan dengan $\mathbb{R}^n$, di mana $n$ adalah jumlah dimensi. Namum sebelum mebahas materi Ruang Vektor Euklidean $\mathbb{R}^n$. Kita berikan suatu masalah nyata sebagai motifasi dari materi pembahasan.</p>		
 <hr class="hr-bimath">
 
-<details close>
-<summary><button><mark><b>Motifasi!</b></mark></button></summary>
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>Motifasi!</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
+
 <p align="justify">
 Sebagai motivasi sebelum membahas ruang vektor, khususnya ruang Eukliden, berikut adalah contoh permasalahan nyata yang melibatkan sistem persamaan linier:
 </p>
@@ -1767,6 +1835,7 @@ Berikut ini adalah implementasi program interaktif menghitung matriks invers $A$
 </p>
 </details>
 </details>
+</div>
 </details>
 <br>
 <hr class="hr-bimath">
@@ -2021,9 +2090,15 @@ display(html(r'''
 </textarea>
 </div>
 <br>
-			<hr class="hr-bimath">
-<details close>
-<summary><button><mark><b>1.1. Pengenalan Vektor</b></mark></button></summary>
+<hr class="hr-bimath">
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>1.1. Pengenalan Vektor</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+	<div class="details-content">
 			<p>
 			Selanjutnya, pada bagian ini, kita mendefinisikan titik dan vektor dalam ruang dimensi-$n$, dan mendiskusikan beberapa interpretasinya. Kita mulai dengan ulasan singkat tentang sistem koordinat Cartesian.
             </p>
@@ -2700,11 +2775,20 @@ Selain itu kita meberikan ringkasan tentang ruang vektor $\mathbb{R}^n$ atas $\m
         </ol>
 </div>
 </div>
+
+</div>
 </details>
 
-<details close>
-<summary><button><mark><b>1.2. Hasil kali dalam (Perkalian Titik), Norm atau Panjang
-vektor</b></mark></button></summary>
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>1.2. Hasil kali dalam (Perkalian Titik), Norm atau Panjang vektor</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
+
 <div class="outcome-container">
     <div class="outcome-header">
         Hasil yang diharapkan (Outcomes)
@@ -4122,11 +4206,17 @@ z\begin{bmatrix}
 \end{bmatrix} = x\mathbf{i} + y\mathbf{j} + z\mathbf{k}.
 \]
 </p>
+</div>
 </details>
-<details close>
-<summary>
-<button><b><mark>1.3. Sudut diantara dua vektor</mark></b></button>
-</summary>
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>1.3. Sudut diantara dua vektor</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
 <p>
 Walaupun telah dibahas sebelumnya dalam contoh tntang sudut dua vektor namum kita belum memberikan pengertian tentang sudut antara dua vekor. Oleh karena itu pada bagian ini secara formal kita memberikan pengertian tentang sudut diantara dua vektor.
 </p>
@@ -4698,11 +4788,18 @@ def calculate_angle_between_vectors(
 </div>
 </div>
 <hr class="hr-bimath">
+</div>
 </details>
-<details close>
-<summary>
-<button><b><mark>1.4. Proyeksi</mark></b></button>
-</summary>
+
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>1.4. Proyeksi</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
 <p>
 Terkadang penting untuk menemukan komponen vektor dalam arah tertentu. Hal ini berkaitan dengan apa yang dinamakan proyeksi. Proyeksi suatu bahasan yang sangat penting berkaitan dengan masalah <b>ortogonal</b>. Peranannya sangat penting dalam proses <b>ortogonalisasi Gram-Schmidt</b>. Kita membahas proses ortogonalisasi Gram-Schmidt.
 </p>
@@ -4921,11 +5018,18 @@ def proyeksi_vektor(
 <p>
 Untuk melihat lebih jauh proyeksi digunakan pada Kriptograpi gambar, silahkan <a href="https://subiono2021.github.io/BiMath-Secure-Vault-Protocol/" target="blank"><b>klik!</b></a>
 </p>
+</div>
 </details>
-<details close>
-<summary>
-<button><b><mark>1.5. Proses Gram-Schmidt</mark></b></button>
-</summary>
+
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>1.5. Proses Gram-Schmidt</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
 <p>
 Proses Gram-Schmidt adalah metode ortonormalisasi yang digunakan untuk mengubah sekumpulan vektor linear independen dalam ruang Euklidean $\mathbb{R}^n$ menjadi sekumpulan vektor ortogonal atau ortonormal.
 </p>
@@ -5507,11 +5611,18 @@ def gram_schmidt_sage(
         """))
 </textarea>
 </div>
+
+</div>
 </details>
-<details close>
-<summary>
-<button><b><mark>1.6. Perkalian Silang</mark></b></button>
-</summary>
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>1.6. Perkalian Silang</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
 <div class="outcome-container">
     <div class="outcome-header">
         Hasil yang diharapkan (Outcomes)
@@ -6400,12 +6511,18 @@ def cross_product_and_norm(
         """))
 </textarea>
 </div>
+
+</div>
 </details>
 
-<details close>
-<summary>
-<button><b><mark>1.7. Perkalian Kotak</mark></b></button>
-</summary>
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>1.7. Perkalian Kotak</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
 <p>
 Pada bagian ini, kita menjelajahi aplikasi lain dari perkalian silang. Ingatlah bahwa kita dapat menggunakan perkalian silang untuk mencari luas jajaran genjang. Seperti yang akan kita tunjukkan sekarang, kita juga dapat menggunakan perkalian silang bersama dengan perkalian titik untuk mencari <b>volume prisma bebasis jajaran genjang</b>. Kita mulai dengan definisi berikut:
 </p>
@@ -7248,12 +7365,19 @@ def triple_scalar_product(
         """))
 </textarea>
 </div>
+
+</div>
 </details>
 
-<details close>
-<summary>
-<button><b><mark>1.8. Teori dan Implementasi Perhitungan Span(S) dan Linear Independence dalam $ \mathbb{R}^n $</mark></b></button>
-</summary>
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>1.8. Teori dan Implementasi Perhitungan Span(S) dan Linear Independence dalam $\mathbb{R}^n$</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
+
 <h3> <b>1. Pendahuluan</b></h3>
 <p align="justify">
 Dalam Aljabar Linear Elemrnter, konsep <em><b>span</b></em> dan <em><b>linear independence</b></em> sangat penting dalam memahami struktur ruang vektor. Dalam dokumen ini, kita akan menjelaskan bagaimana menghitung span dari himpunan vektor, menentukan apakah himpunan tersebut bebas linier atau bergantungan linier, serta mengevaluasi apakah sebuah vektor termasuk dalam span himpunan tersebut.
@@ -8296,11 +8420,20 @@ def kalkulator_span_interaktif(
     show(html(rf"$\mathbf{{v}}={col(v_list)}$"))
 </textarea>
 </div>
+
+</div>
 </details>
-<details close>
-<summary>
-<button><b><mark>1.9. Koordinat dan Perubahan Basis dalam $\mathbb{R}^n$</mark></b></button>
-</summary>
+
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>1.9. Koordinat dan Perubahan Basis dalam $\mathbb{R}^n$</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
+
 <h3> </b>1. Pendahuluan</b></h3>
 <p align="justify">  
 Dalam Aljabar Linear Elementer, sistem koordinat adalah cara merepresentasikan vektor dalam suatu ruang vektor menggunakan basis tertentu. Basis adalah himpunan vektor yang bebas linear dan menegaskan seluruh ruang vektor melalui kombinasi liniernya. Setiap vektor dalam ruang tersebut dapat dinyatakan sebagai kombinasi linier dari basis tersebut dengan koefisien yang disebut </b>koordinat vektor</b> dalam basis tersebut.
@@ -8681,8 +8814,10 @@ def bimath_change_of_basis(
         display(html(f"<p style='color:red'><b>Kesalahan:</b> {e}</p>"))
 </textarea>
 </div>
+
+</div>
 </details>
-        </section>
+</section>
 
 <section id="section2" class="section">
 <h2><b>2. Sistem Persamaan Linier dalam \(\mathbb{R}^n\)</b></h2>
@@ -8696,10 +8831,15 @@ studi di mana aljabar linier dapat diterapkan, sistem persamaan linier terjadi d
 penting.
 </p>
 
-<details close>
-<summary>
-<button><b><mark>2.1. Dimensi Ruang Kolom dari \(A\) dan Hubungannya dengan Penyelesaian</mark></b></button>
-</summary>
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>2.1. Dimensi Ruang Kolom dari \(A\) dan Hubungannya dengan Penyelesaian</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
+
 <p>
 Dimensi ruang kolom dari \( A \), yang disebut <b>rank</b>, menunjukkan jumlah vektor basis dalam ruang kolom dari \( A \). Dalam analisis solusi:
 </p>
@@ -8867,11 +9007,19 @@ Baris terakhir berbentuk \(0 = -4\), yang merupakan <b>kontradiksi</b>. Jadi, si
 </ol>
 Dengan demikian, memahami ruang kolom sebagai kombinasi linear dan rank-nya memberikan kerangka yang jelas untuk memprediksi sifat solusi suatu sistem persamaan linear.
 </p>
+</div>
 </details>
-<details close>
-<summary>
-<button><b><mark>2.2. Contoh Real Problem dengan Dimensi 3 (\(n=3\)) dan 4 Persamaan (\(m=4\))</mark></b></button>
-</summary>
+
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>2.2. Contoh Real Problem dengan Dimensi 3 (\(n=3\)) dan 4 Persamaan (\(m=4\))</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
+
 <p>
 Misalnya dalam menganalisis rangkaian listrik berikut
 </p>
@@ -9244,6 +9392,8 @@ def SistemLinear_GaussJordan(M_A = input_box(default='[(1,-1,-1),(5,0,20),(0,10,
             display(html('<b>Solusi dalam bentuk parametrik dapat ditulis tergantung variabel bebas.</b>'))
 </textarea>
 </div>
+
+</div>
 </details>
 </section>
 
@@ -9394,10 +9544,16 @@ A=\left[
 bila $x=1$, maka $A=B$. Walaupun ukuran $A$ dan $B$ sama, bila $x\neq 1$, maka $A\neq B$. Sedangkan $A\neq C$ dan $B\neq C$ sebab ukuran matriks $A$ tidak sama dengan ukuran matriks $C$ begitu juga ukuran $B$ tidak sama dengan ukuran $C$.
 </p>
 <hr class="hr-bimath">
-<details close>
-<summary>
-<button><b><mark>3.1.Aritmatika dan Operasi Matriks</mark></b></button>
-</summary>
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>3.1.Aritmatika dan Operasi Matriks</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
+
 <p>
  Dalam bagian ini dibahas penambahan , pengurangan dan perkalian matriks serta dibahas transpose dan trace dari suatu matriks.
  </p>
@@ -10301,11 +10457,19 @@ dan
 \end{bmatrix}=\overline{A^\top}=A^{*}.
 \]
 </p>
+</div>
 </details>
-<details close>
-<summary>
-<button><b><mark>3.2. Sifat sifat Aritmatika Matriks</mark></b></button>
-</summary>
+
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>3.2. Sifat sifat Aritmatika Matriks</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
+
 <p>
 Pada bagian ini dibahas lebih mendalam mengenai sifat sifat aritmatika matriks. Diantaranya sifat komutatif, sifat assosiatif dan sifat elemen netral dari penjumlahan dua matriks. Juga dibahas sifat-sifat berkenaan dengan perkalian matriks baik dengan skalar ataupun matriks dengan matriks.
 </p>
@@ -10562,11 +10726,19 @@ dan
 (A-A^\top)^\top=A^\top-(A^\top)^\top=A^\top-A=-(A-A^\top).
 \]
 </p>
+</div>
 </details>
-<details close>
-<summary>
-<button><b><mark>3.3. Matriks Elementer</mark></b></button>
-</summary>
+
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>3.3. Matriks Elementer</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
+
 <p>
 Dalam bagian ini dibahas ulang (mengingatkan lagi) tentang Operasi Baris Elementer (<b>OBE</b>) adalah operasi yang dilakukan pada baris suatu matriks untuk mengubah bentuknya, biasanya dalam proses eliminasi Gauss atau mencari invers matriks. Dalam konteks matriks identitas $I_n$, OBE sangat berkaitan dengan <b>matriks elementer</b>. Hasil-hasil pembahasan kita gunakan untuk mendiskusikan topik "Faktorisasi <b>LU</b>" dari suatu matriks persegi.
 </p>
@@ -11187,11 +11359,20 @@ def Kalkulator_Invers_Matriks(
         display(html('<span style="color:red">❌ Proses eliminasi tidak menghasilkan matriks identitas di bagian kiri</span>'))
 </textarea>
 </div>
+
+</div>
 </details>
-<details close>
-<summary>
-<button><b><mark>3.4. Dekomposisi/Faktorisasi $LU$.</mark></b></button>
-</summary>
+
+
+<details class="custom-details">
+    <summary class="custom-summary">
+        <span class="summary-title">
+            <mark>3.4. Dekomposisi/Faktorisasi $LU$.</mark>
+        </span>
+        <span class="summary-icon">▶</span>
+    </summary>
+    <div class="details-content">
+
 <p>
 Faktorisasi $LU$ adalah salah satu teknik fundamental dalam aljabar linear yang digunakan untuk mendekomposisi suatu matriks persegi $ A $ menjadi hasil perkalian dua matriks segitiga, yaitu matriks segitiga bawah $ L $ dan matriks segitiga atas $ U $. Secara matematis, faktorisasi ini dinyatakan sebagai:
 </p>
@@ -13860,6 +14041,8 @@ display(html(r"""
 </div>
 """))
 </textarea>
+</div>
+
 </div>
 </details>
 </section>
